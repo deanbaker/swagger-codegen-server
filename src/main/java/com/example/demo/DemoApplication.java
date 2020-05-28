@@ -41,3 +41,26 @@ class EndpointsListener {
 				.getHandlerMethods().forEach((key, value) -> LOGGER.info("{} {}", key, value));
 	}
 }
+
+
+@Component
+class PetApiDelegateImpl implements PetApiDelegate {
+	private final NativeWebRequest request;
+
+	PetApiDelegateImpl(NativeWebRequest request) {
+		this.request = request;
+	}
+
+	@Override
+	public Optional<NativeWebRequest> getRequest() {
+		return Optional.of(request);
+	}
+
+	@Override
+	public ResponseEntity<Pet> getPetById(Long petId) {
+
+		Pet pet = new Pet();
+		pet.setName("dean");
+		return new ResponseEntity<>(pet, HttpStatus.OK);
+	}
+}
