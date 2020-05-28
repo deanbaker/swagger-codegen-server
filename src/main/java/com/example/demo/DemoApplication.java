@@ -59,6 +59,8 @@ class PetApiDelegateImpl implements PetApiDelegate {
 	@Override
 	public ResponseEntity<Pet> getPetById(Long petId) {
 
+		// This is where you might shell out to service
+		// that would contact a database etc.
 		Pet pet = new Pet();
 		pet.setName("dean");
 		return new ResponseEntity<>(pet, HttpStatus.OK);
