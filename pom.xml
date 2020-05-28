@@ -92,9 +92,7 @@
             <plugin>
                 <groupId>org.openapitools</groupId>
                 <artifactId>openapi-generator-maven-plugin</artifactId>
-                <!-- RELEASE_VERSION -->
                 <version>4.3.1</version>
-                <!-- /RELEASE_VERSION -->
                 <executions>
                     <execution>
                         <goals>
@@ -107,6 +105,7 @@
                             <modelPackage>com.example.demo.api.model</modelPackage>
                             <configOptions>
                                 <sourceFolder>src/gen/java/main</sourceFolder>
+                                <delegatePattern>true</delegatePattern>
                             </configOptions>
                         </configuration>
                     </execution>
